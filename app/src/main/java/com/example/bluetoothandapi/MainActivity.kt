@@ -27,18 +27,7 @@ class MainActivity : AppCompatActivity() {
             pairWithNewDevices()
         }
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
-        if (bluetoothAdapter == null) {
-            binding.bluetoth.setText("Bluetooth is not available")
 
-        } else {
-            binding.bluetoth.setText("Bluetooth is available")
-
-        }
-        if (bluetoothAdapter.isEnabled) {
-            binding.newimage.setImageResource(R.drawable.baseline_bluetooth_24)
-        } else {
-            binding.newimage.setImageResource(R.drawable.baseline_bluetooth_disabled_24)
-        }
         binding.turnon.setOnClickListener {
             if (bluetoothAdapter.isEnabled) {
                 Toast.makeText(this, "Bluetooth is already  on", Toast.LENGTH_SHORT).show()
